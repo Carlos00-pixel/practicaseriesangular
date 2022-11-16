@@ -1,0 +1,8 @@
+<div class="card" style="width: 26rem; margin: 0 auto; margin-top: 10px;">
+    <img src="{{serie.imagen}}" class="card-img-top" style="height: 300px; margin-bottom: 25px;"/>
+    <div class="card-body">
+      <h5 class="card-title" style="margin-bottom: 25px;">{{serie.nombre}}</h5>
+      <p class="card-text" style="margin-bottom: 25px;">IMDB: {{serie.puntuacion}}</p>
+      <a [routerLink]="['/personajes', serie.idSerie]" class="btn btn-success" style="width: 100%;">Personajes</a>
+    </div>
+</div>
