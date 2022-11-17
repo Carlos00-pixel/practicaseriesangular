@@ -1,6 +1,7 @@
 import { HomeComponent } from "./components/home/home.component";
 import { DetallesseriesComponent } from "./components/detallesseries/detallesseries.component";
 import { DetallespersonajesComponent } from "./components/detallespersonajes/detallespersonajes.component";
+import { InsertarpersonajeComponent } from "./components/insertarpersonaje/insertarpersonaje.component";
 
 import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
@@ -15,7 +16,10 @@ const appRoutes: Routes = [
     },
     {
         path: "personajes/:id", component: DetallespersonajesComponent
-    }
+    },
+    {
+        path: "nuevopersonaje", component: InsertarpersonajeComponent
+    },
 ]
 
 export const appRoutingProviders: any = [];
