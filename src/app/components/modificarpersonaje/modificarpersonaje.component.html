@@ -1,0 +1,18 @@
+<div style="width: 70%; margin: 0 auto;">
+    <h1 style="color: blue">Personajes y series</h1>
+    <form #modificarPersonaje="ngForm">
+        <label>Seleccione una serie: </label>
+        <select class="form-control" #selectSeries name="selectSeries">
+            <option *ngFor="let serie of series">
+                {{serie.nombre}}
+            </option>
+        </select>
+        <label>Seleccione un personaje: </label>
+        <select class="form-control" #selectPersonajes name="selectPersonajes">
+            <option *ngFor="let per of personajes">
+                {{per.nombre}}
+            </option>
+        </select>
+        <button class="btn btn-info">Guardar cambios</button>
+    </form>
+</div>
