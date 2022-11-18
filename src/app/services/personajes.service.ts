@@ -42,7 +42,7 @@ export class PersonajesService {
 
         var url = environment.urlApiSeriesPersonajes + request;
 
-        return this._http.put(url, json, {headers: header});
+        return this._http.put(url, 0, {headers: header});
     }
 
     getPersonajesSeleccionados(id: number): Observable<any> {
