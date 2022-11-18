@@ -20,4 +20,11 @@ export class SeriesService {
 
         return this._http.get(url);
     }
+
+    getSeriesSeleccionada(id: number): Observable<any> {
+        var request = "/api/Series/"+id;
+        var url = environment.urlApiSeriesPersonajes + request;
+
+        return this._http.get(url);
+    }
 }

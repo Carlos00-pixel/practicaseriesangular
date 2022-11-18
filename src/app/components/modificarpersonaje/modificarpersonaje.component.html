@@ -2,17 +2,31 @@
     <h1 style="color: blue">Personajes y series</h1>
     <form #modificarPersonaje="ngForm">
         <label>Seleccione una serie: </label>
-        <select class="form-control" #selectSeries name="selectSeries">
-            <option *ngFor="let serie of series">
+        <select class="form-control" #selectSeries name="selectSeries" (change)="mostrarSerieSeleccionada()">
+            <option *ngFor="let serie of series" [value]="serie.idSerie">
                 {{serie.nombre}}
             </option>
         </select>
         <label>Seleccione un personaje: </label>
-        <select class="form-control" #selectPersonajes name="selectPersonajes">
-            <option *ngFor="let per of personajes">
+        <select class="form-control" #selectPersonajes name="selectPersonajes" (change)="mostrarPersonajesSeleccionados()">
+            <option *ngFor="let per of personajes" [value]="per.idPersonaje">
                 {{per.nombre}}
             </option>
         </select>
-        <button class="btn btn-info">Guardar cambios</button>
+        <button class="btn btn-info" (click)="updatePersonaje()" style="margin-bottom: 10px;">Guardar cambios</button>
     </form>
+    <div style="display: flex;">
+        <div *ngIf="serieSelect">
+            <div>
+                <h2>{{serieSelect.nombre}}</h2>
+                <img src="{{serieSelect.imagen}}" style="width: 200px;"/>
+            </div>
+        </div>
+        <div *ngIf="personajesSelect" style="margin-left: 100px;">
+            <div>
+                <h2>{{personajesSelect.nombre}}</h2>
+                <img src="{{personajesSelect.imagen}}" style="width: 200px;"/>
+            </div>
+        </div>
+    </div>
 </div>
